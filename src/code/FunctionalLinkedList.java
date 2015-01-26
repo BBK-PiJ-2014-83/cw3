@@ -28,13 +28,19 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
      * must not change or be affected by changes in the new list. 
      * 
      * If the list is empty, another empty list is returned. 
+     * @return FunctionalList The list without the headNode
      */
     public FunctionalList rest(){
 		FunctionalLinkedList noHead = new FunctionalLinkedList();
-		//That's it. All we need to do is to set the head to the previous lists head node -> nextNode and the rest of the structure remains intact.
-		//We need to set the length to be one less than the original list's length too
-		noHead.headNode = this.headNode.getNextNode();
-		noHead.length = this.length - 1;
+		if (this.length > 0) {
+			//That's it. All we need to do is to set the head to the previous lists head node -> nextNode and the rest of the structure remains intact.
+			//We need to set the length to be one less than the original list's length too
+			noHead.headNode = this.headNode.getNextNode();
+			noHead.length = this.length - 1;	
+		} else {
+			noHead.headNode = null;
+			noHead.length = 0;
+		}
 		return noHead;
 	};
 }
