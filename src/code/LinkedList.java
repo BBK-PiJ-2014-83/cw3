@@ -1,4 +1,8 @@
 package code;
+/**
+ * This class is created out of individual nodes (See ListNode). Each node links to the next node and they follow one another.
+ * @author John Spears
+ */
 public class LinkedList implements List {
 	protected int length;
 	protected ListNode headNode;
@@ -6,6 +10,10 @@ public class LinkedList implements List {
 		this.length = 0;
 		this.headNode = null;
 	}
+	/**
+	 * Because this list requires a head node a subclass of ListNode was created. This is an individual node and consists of the item/object itself, a pointer to the next node and an index value to show where it is in the list.
+	 * @author John Spears
+	 */	
 	protected class ListNode {
 		int index;
 		Object item;
@@ -17,17 +25,23 @@ public class LinkedList implements List {
 		}
 		
 		/**
-			This sets the value of the next Node in the linked list
-			@param node The listnode that we will point to
+		* This sets the value of the next Node in the linked list
+		* @param node The listnode that we will point to
 		*/
 		public void setNextNode(ListNode node) {
 			this.nextNode = node;
 		}
-		
+		/**
+		* This gets the node that this node links to
+		* @return node The listnode that we this is linking to
+		*/		
 		public ListNode getNextNode() {
 			return this.nextNode;
 		}
-		
+		/**
+		* Asks for the item that is stored in the node
+		* @return Object that is contained in the node.
+		*/				
 		public Object getItem() {
 			return this.item;
 		}
@@ -41,7 +55,11 @@ public class LinkedList implements List {
 		}
 		
 	}
-	
+	/**
+	 * Returns true if the list is empty, false otherwise. 
+	 * 
+	 * @return true if the list is empty, false otherwise. 
+	 */	
 	public boolean isEmpty() {
 		if (this.size() == 0) {
 			return true;
@@ -92,8 +110,8 @@ public class LinkedList implements List {
 
 	/**
 	 * Returns the elements at the given position and removes it
-	 * from the list. The indeces of elements after the removed
-	 * element must be updated accordignly.
+	 * from the list. The indices of elements after the removed
+	 * element must be updated accordingly.
 	 * 
 	 * If the index is negative or greater or equal than the size of
 	 * the list, then an appropriate error must be returned.
