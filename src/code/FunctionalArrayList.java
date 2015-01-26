@@ -31,12 +31,18 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      * must not change or be affected by changes in the new list. 
      * 
      * If the list is empty, another empty list is returned. 
+     * @return A copy of the array list with the head node removed or an empty list
      */
     public FunctionalList rest(){
-		FunctionalArrayList noHead = new FunctionalArrayList(this.objList.length -1);
-		for (int i = 1; i < this.objList.length; i++) {
-			noHead.objList[i-1] = this.objList[i];
-		}
+		FunctionalArrayList noHead;
+    	if (this.objList.length > 1 ) {
+    		noHead = new FunctionalArrayList(this.objList.length -1);
+    		for (int i = 1; i < this.objList.length; i++) {
+    			noHead.objList[i-1] = this.objList[i];
+    		}
+    	} else {
+    		noHead = new FunctionalArrayList(0);
+    	}
 		return noHead;
 	};
 }

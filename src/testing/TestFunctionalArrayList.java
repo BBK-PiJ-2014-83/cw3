@@ -49,6 +49,13 @@ public class TestFunctionalArrayList {
 	}
 
 	@Test
+	public void testRest_Empty() {
+		FunctionalArrayList testList = (FunctionalArrayList) this.emptyList.rest();
+		assertEquals(ErrorMessage.EMPTY_STRUCTURE, testList.head().getReturnValue());
+
+	}
+	
+	@Test
 	public void testHead_From_Rest() {
 		FunctionalArrayList testList = (FunctionalArrayList) this.fullList.rest();
 		assertEquals("John", testList.head().getReturnValue());

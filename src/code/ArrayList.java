@@ -1,4 +1,14 @@
 package code;
+/**
+ * A list built from an Array which contains method to add new objects, remove objects
+ * view objects.
+ * 
+ * Error checking is included when users try to enter or access data from the list.
+ * Results of method are wrapped in types ReturnObjectImpl
+ * 
+ * 
+ * @author John Spear
+ */
 public class ArrayList implements List {
 	protected Object[] objList;
 	public ArrayList(int length) {
@@ -59,8 +69,8 @@ public class ArrayList implements List {
 
 	/**
 	 * Returns the elements at the given position and removes it
-	 * from the list. The indeces of elements after the removed
-	 * element must be updated accordignly.
+	 * from the list. The indices of elements after the removed
+	 * element must be updated accordingly.
 	 * 
 	 * If the index is negative or greater or equal than the size of
 	 * the list, then an appropriate error must be returned.
@@ -79,7 +89,7 @@ public class ArrayList implements List {
 
 	/**
 	 * Adds an element to the list, inserting it at the given
-	 * position. The indeces of elements at and after that position
+	 * position. The indices of elements at and after that position
 	 * must be updated accordingly.
 	 * 
 	 * If the index is negative or greater or equal than the size of
@@ -145,7 +155,7 @@ public class ArrayList implements List {
 	
 	/**
 	* Sometimes we are going to need to redim an the list array if we are inserting more objects in it
-	* @param index the position in the array that we are insering the item
+	* @param index the position in the array that we are inserting the item
 	* @param item the value to insert into the list
 	*/
 	protected void reDimList(int index, Object item) {
