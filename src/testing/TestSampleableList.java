@@ -9,12 +9,15 @@ import static org.junit.Assert.assertEquals;
 
 public class TestSampleableList {
 	SampleableList testList;
+	SampleableList emptyList;
+	
 	ReturnObject result;
 	
 	@Before
 	public void before() {
 		//Constructor
 		this.testList = new SampleableListImpl();
+		this.emptyList = new SampleableListImpl();
 		this.result = new ReturnObjectImpl();
 		this.testList.add("Test complete");		
 		this.testList.add(39);		
@@ -50,5 +53,11 @@ public class TestSampleableList {
 		//Make sure it contains the right number of items
 		SampleableList list = this.testList.sample(); 
 		assertEquals(true, list.remove(2).getReturnValue());
+	}		
+	@Test
+	public void testEmpty() {
+		//Make sure it returns an error 
+		SampleableList list = this.emptyList.sample(); 
+		assertEquals(ErrorMessage.EMPTY_STRUCTURE, list.remove(2).getReturnValue());
 	}		
 }
