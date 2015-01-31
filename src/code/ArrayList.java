@@ -80,8 +80,10 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index) {
+		//No need to re-do code. Call this.get and cast it the right way
 		ReturnObjectImpl result = (ReturnObjectImpl) this.get(index);
 		if (result.hasError() == false){
+			//If there are no errors then re-size the array.
 			reDimList(index);
 		}
 		return result;
@@ -106,7 +108,6 @@ public class ArrayList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(int index, Object item) {
-		//System.out.println("Length:" + this.objList.length);
 		ReturnObjectImpl result = new ReturnObjectImpl();
 		if (item == null) {
 			result.setError(true);
@@ -127,7 +128,6 @@ public class ArrayList implements List {
 				reDimList(index, item);		
 			}		
 		}
-		//printArr();
 		return result;
 	};
 
@@ -154,7 +154,7 @@ public class ArrayList implements List {
 	};
 	
 	/**
-	* Sometimes we are going to need to redim an the list array if we are inserting more objects in it
+	* Sometimes we are going to need to re-size the list array if we are inserting more objects in it
 	* @param index the position in the array that we are inserting the item
 	* @param item the value to insert into the list
 	*/
@@ -173,7 +173,7 @@ public class ArrayList implements List {
 	}
 	
 	/**
-	* Sometimes we are going to need to redim an the list array if we are removing an object from it
+	* Sometimes we are going to need to re-size an the list array if we are removing an object from it
 	* @override
 	* @param index the position in the array that we are removing
 	*/
