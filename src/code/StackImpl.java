@@ -30,7 +30,7 @@ public class StackImpl extends AbstractStack {
 	/**
 	 * Adds an element at the top of the stack. 
 	 * 
-	 * @param item the new item to be added
+	 * @param the new item to be added
 	 */
 	public void push(Object item) {
 		//Always add the item. Either as the head or the first item in the array.
