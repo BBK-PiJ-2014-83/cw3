@@ -26,8 +26,6 @@ public class TestLinkedList {
 		this.fullList.add("Testing");
 		this.fullList.add("Birkbeck");
 		this.fullList.add(3);
-
-
 	}
 	
 	@Test

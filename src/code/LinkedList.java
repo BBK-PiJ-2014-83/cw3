@@ -45,11 +45,17 @@ public class LinkedList implements List {
 		public Object getItem() {
 			return this.item;
 		}
-		
+		/**
+		* Returns the index of the node
+		* @return index of node.
+		*/			
 		public int getIndex() {
 			return this.index;
 		}
-		
+		/**
+		* Sets the index of a node
+		* @param index to be set.
+		*/			
 		public void setIndex(int index){
 			this.index = index;
 		}
@@ -157,7 +163,6 @@ public class LinkedList implements List {
 	/**
 	* Moves all the indexes of the nodes up or down 1 from the specified index point
 	* @param index The index point which we are adjusting from
-	* @param up Whether you are moving them up or down
 	*/
 	private void adjustIndexes(int index) {
 		ListNode tempNode = headNode;
@@ -216,7 +221,7 @@ public class LinkedList implements List {
 
 	/**
 	 * Adds an element to the list, inserting it at the given
-	 * position. The indeces of elements at and after that position
+	 * position. The indices of elements at and after that position
 	 * must be updated accordingly.
 	 * 
 	 * If the index is negative or greater or equal than the size of
@@ -262,8 +267,6 @@ public class LinkedList implements List {
 				}
 				//Now adjust the indexes
 				adjustIndexes(index);
-
-				
 			}
 			//Add 1 to the length field			
 			this.length++;
